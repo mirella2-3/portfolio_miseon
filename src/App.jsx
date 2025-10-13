@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './page/Home';
 import GlobalStyle from './styled/GlobalStyle';
-import Layout from './common/layout';
+import Layout from './common/Layout';
 
 const App = () => {
     return (
