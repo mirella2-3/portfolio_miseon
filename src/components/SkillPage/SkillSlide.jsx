@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import SkillList from '../../assets/SkillList.js';
+import SkillList from '../../assets/SkillList';
 
 const SkillSlide = () => {
     const sliderRef = useRef(null);
