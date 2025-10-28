@@ -11,8 +11,14 @@ export const PopupPageStyle = styled.section`
         margin-bottom: 18px;
 
         strong {
-            font-size: 46px;
-            font-weight: 700;
+            color: var(--Brown-brown-500, #564438);
+
+            /* 68 */
+            font-family: 'EB Garamond';
+            font-size: 68px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
         }
     }
 
@@ -58,7 +64,6 @@ export const PopupPageStyle = styled.section`
         }
     }
 
-    /* ✅ 빅 슬라이더 스타일 */
     .popup-big-swiper {
         width: 370px;
         position: absolute;
@@ -67,8 +72,7 @@ export const PopupPageStyle = styled.section`
         transform: translate(-50%, -50%);
         display: block;
         z-index: 1;
-        border-left: 4px solid #fff;
-        border-right: 4px solid #fff;
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2), 0 4px 14px 0 rgba(0, 0, 0, 0.05);
 
         .swiper-slide {
             display: flex;

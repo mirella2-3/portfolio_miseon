@@ -36,7 +36,7 @@ const ViralLongSlide = () => {
 
         tl.current.to(slider, {
             x: 0,
-            duration: 90,
+            duration: 30,
             onComplete: () => {
                 gsap.set(slider, { x: -itemWidth * originalCount });
             },

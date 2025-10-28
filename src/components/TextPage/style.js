@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const TextPageStyle = styled.div`
     text-align: center;
-
-    /* padding-top: 254px;
-    padding-bottom: 573px; */
-    height: 100vh;
     width: 100vw;
-
+    /* height: 700px; */
+    height: 100vh;
+    padding-top: 160px;
     position: relative;
-    overflow: hidden;
+    &.page2 {
+        background: #f2efeb;
+    }
 
     .gradient-bg {
         position: absolute;
@@ -20,9 +20,9 @@ export const TextPageStyle = styled.div`
         transform: translateX(-50%) scale(0);
         overflow: visible;
         background: radial-gradient(
-            circle,
-            rgba(180, 112, 131, 0.3) 0%,
-            rgba(255, 255, 255, 0) 60%
+            50% 50% at 50% 50%,
+            rgba(153, 117, 92, 0.3) 0%,
+            rgba(241, 239, 235, 0) 100%
         );
         opacity: 0.7;
         transition: 0.3s;
@@ -39,17 +39,19 @@ export const TextPageStyle = styled.div`
     }
     h1 {
         font-size: 74px;
-        font-weight: 700;
+        font-weight: 600;
         color: #000;
         line-height: 1;
         margin-bottom: 8px;
+        font-family: 'EB Garamond';
     }
     h3 {
-        color: #653340;
+        color: #564438;
         font-size: 64px;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
         margin-bottom: 58px;
+        font-family: 'EB Garamond';
     }
     span {
         color: #353535;

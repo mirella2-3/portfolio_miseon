@@ -16,8 +16,8 @@ const PortraitPage = () => {
                 {/* 텍스트박스 + 썸네일 묶음 (세로 정렬) */}
                 <div className="leftBox">
                     <div className="text-box">
-                        <h3>Portrait Retouching</h3>
-                        <p>이미지 위에 마우스를 올려보면 보정 전 사진을 확인할 수 있습니다.</p>
+                        <h3>Photo retouching</h3>
+                        <p>이미지 위로 마우스를 올리면 보정 전 사진을 확인할 수 있습니다.</p>
                     </div>
                     <Swiper
                         onSwiper={setThumbsSwiper}

@@ -1,15 +1,16 @@
 import Navbar from './Navbar';
 import { HeaderStyle } from './style';
 
-const Header = () => {
+const Header = ({ profileRef, skillRef, textRef, galleryRef, peopleRef }) => {
     return (
         <HeaderStyle>
-            <div className="inner">
-                <p>
-                    <img src="/images/Logo.png" alt="" />
-                </p>
-                <Navbar />
-            </div>
+            <Navbar
+                profileRef={profileRef}
+                skillRef={skillRef}
+                textRef={textRef}
+                galleryRef={galleryRef}
+                peopleRef={peopleRef}
+            />
         </HeaderStyle>
     );
 };

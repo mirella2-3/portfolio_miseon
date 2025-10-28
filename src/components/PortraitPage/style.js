@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const PortraitPageStyle = styled.div`
     width: 100vw;
-    background-image: url(/images/PortraitBackground.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: cover;
+    background: radial-gradient(50% 50% at 50% 50%, #e4e3e1 0%, rgba(141, 132, 123, 0) 100%);
     .container {
         display: flex;
         justify-content: space-between;

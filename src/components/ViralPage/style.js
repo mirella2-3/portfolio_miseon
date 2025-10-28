@@ -10,8 +10,7 @@ export const ViralPageStyle = styled.div`
         top: 13px;
         font-size: 240px;
         font-weight: 700;
-        /* color: #f0f0f0; */
-        color: #f1d3dd;
+        color: #f2efeb;
     }
 
     #Longbox {

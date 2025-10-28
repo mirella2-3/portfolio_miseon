@@ -1,21 +1,33 @@
-import React from 'react';
+// Navbar.jsx
 import { NavStyle } from './style';
 
-const Navbar = () => {
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 
+const Navbar = () => {
     return (
         <NavStyle>
-            <button onClick={() => scrollToSection('About Me')}>About Me </button>
-            <button onClick={() => scrollToSection('Projects')}>Projects</button>
-            <button onClick={() => scrollToSection('Former-company')}>Former-company</button>
-            <button onClick={() => scrollToSection('Portrait Retouching')}>
-                Portrait Retouching
+            <button onClick={() => scrollToSection('Profile')}>
+                Profile
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
+            </button>
+            <button onClick={() => scrollToSection('Projects')}>
+                Projects
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
+            </button>
+            <button onClick={() => scrollToSection('works')}>
+                About Me
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
             </button>
         </NavStyle>
     );

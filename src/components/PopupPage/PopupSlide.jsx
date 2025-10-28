@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
+
 import PopupSmall from '../../assets/PopupSmall';
 import PopupBig from '../../assets/PopupBig';
 
 const PopupSlide = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const bigSwiperRef = useRef(null);
+
     useEffect(() => {
         if (bigSwiperRef.current) {
             bigSwiperRef.current.slideToLoop(activeIndex);
@@ -22,6 +25,11 @@ const PopupSlide = () => {
                 slideToClickedSlide={true}
                 slidesPerView="auto"
                 spaceBetween={11}
+                modules={[Autoplay]}
+                autoplay={{
+                    delay: 3000, // 3초마다 자동 슬라이드
+                    disableOnInteraction: false, // 사용자 조작 이후에도 계속 자동 재생
+                }}
                 onSlideChange={(swiper) => {
                     setActiveIndex(swiper.realIndex);
                 }}
@@ -34,8 +42,9 @@ const PopupSlide = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+
             <p className="iPhoneImg">
-                <img src="/images/popup-image/iPhone.png" alt="" />
+                <img src="/images/popup-image/iPhone.png" alt="iPhone" />
             </p>
 
             <Swiper
