@@ -24,7 +24,7 @@ const Navbar = () => {
                 </p>
             </button>
             <button onClick={() => scrollToSection('works')}>
-                About Me
+                Works
                 <p>
                     <img src="/images/Intro-image/header.png" alt="" />
                 </p>
