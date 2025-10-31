@@ -1,54 +1,80 @@
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Thumbs } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/thumbs';
+import RetouchingData from '../../assets/RetouchingData';
+import { PiCoffeeBeanFill } from 'react-icons/pi';
 import { PortraitPageStyle } from './style';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const PortraitPage = () => {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const images = [1, 2, 3, 4, 5];
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    // 메인 이미지: hover 시 before, 기본은 after
+    const mainImage = isHovered
+        ? RetouchingData[selectedIndex].before
+        : RetouchingData[selectedIndex].after;
 
     return (
-        <PortraitPageStyle>
-            <div className="container">
-                {/* 텍스트박스 + 썸네일 묶음 (세로 정렬) */}
-                <div className="leftBox">
-                    <div className="text-box">
-                        <h3>Photo retouching</h3>
-                        <p>이미지 위로 마우스를 올리면 보정 전 사진을 확인할 수 있습니다.</p>
-                    </div>
+        <PortraitPageStyle className="portrait-page-container">
+            <div className="left">
+                <div className="text-area2">
+                    <h3>
+                        <PiCoffeeBeanFill
+                            size={32}
+                            color="#998A7C"
+                            style={{ marginRight: '17px' }}
+                        />
+                        Photo retouching
+                    </h3>
+                    <p>이미지 위로 마우스를 올리면 보정 전 사진을 확인할 수 있습니다.</p>
+                </div>
+
+                <div className="thumbnailWrap">
                     <Swiper
-                        onSwiper={setThumbsSwiper}
                         spaceBetween={10}
                         slidesPerView={5}
-                        watchSlidesProgress
-                        slideToClickedSlide
-                        className="thumbs-swiper"
+                        slideToClickedSlide={true}
+                        loop={true}
+                        centeredSlides={true}
+                        onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
                     >
-                        {images.map((n) => (
-                            <SwiperSlide key={n}>
-                                <img src={`/images/main-${n}.png`} alt={`thumb-${n}`} />
+                        {RetouchingData.map((img, idx) => (
+                            <SwiperSlide key={idx}>
+                                <img
+                                    src={img.after}
+                                    alt={`thumb-${idx}`}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        cursor: 'pointer',
+                                    }}
+                                    onClick={() => setSelectedIndex(idx)}
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>
+            </div>
 
-                {/* 메인 슬라이더 (오른쪽에) */}
-                <Swiper
-                    modules={[Thumbs]}
-                    thumbs={{ swiper: thumbsSwiper }}
-                    // spaceBetween={10}
-                    slidesPerView={1}
-                    className="main-swiper"
+            {/* 메인 이미지 */}
+            <div className="main-bg">
+                {/* 흐린 배경 */}
+                <div
+                    className="background-image"
+                    style={{
+                        backgroundImage: `url(${RetouchingData[selectedIndex].after})`,
+                    }}
+                />
+
+                {/* 메인 이미지 */}
+                <div
+                    className="main-image"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
                 >
-                    {images.map((n) => (
-                        <SwiperSlide key={n}>
-                            <img src={`/images/main-${n}.png`} alt={`main-${n}`} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                    <img src={mainImage} alt="main" />
+                </div>
             </div>
         </PortraitPageStyle>
     );

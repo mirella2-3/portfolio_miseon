@@ -180,7 +180,7 @@ export const WorkGalleryStyle = styled.div`
                     width: 65%;
                     /* border: 1px solid #000; */
                     height: 506px;
-                    p {
+                    div {
                         position: relative;
                         cursor: pointer;
                         .txt {

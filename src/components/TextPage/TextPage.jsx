@@ -14,13 +14,12 @@ const TextPage = () => {
     useEffect(() => {
         const ctx = gsap.context(() => {
             ScrollTrigger.matchMedia({
-                // === 데스크톱 (1024px 이상) ===
                 '(min-width: 1024px)': function () {
                     const tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: 'top 55%',
-                            end: '+=450',
+                            start: 'top 30%',
+                            end: 'top -10%',
                             scrub: true,
                         },
                     });
@@ -36,21 +35,21 @@ const TextPage = () => {
                         h1Ref.current,
                         { opacity: 0, y: 30 },
                         { opacity: 1, y: 0, duration: 1 },
-                        '+=0.2'
+                        '+=0.5'
                     );
 
                     tl.fromTo(
                         h3Ref.current,
                         { opacity: 0, y: 30 },
                         { opacity: 1, y: 0, duration: 1 },
-                        '+=0.2'
+                        '+=0.5'
                     );
 
                     tl.fromTo(
                         spanRef.current,
                         { opacity: 0, y: 20 },
                         { opacity: 1, y: 0, duration: 0.4 },
-                        '+=0.2'
+                        '+=0.5'
                     );
 
                     const tlDisappear = gsap.timeline({

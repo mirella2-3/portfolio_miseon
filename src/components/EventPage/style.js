@@ -23,7 +23,7 @@ export const EventPageStyle = styled.div`
         .text-area {
             position: fixed;
             right: 160px;
-            top: 160px;
+            top: 120px;
             z-index: 0;
             height: 100vh;
 
@@ -51,6 +51,7 @@ export const EventPageStyle = styled.div`
         gap: 30px;
         position: absolute;
         top: 160px;
+        top: 0;
         left: 167px;
 
         .items-col {
@@ -68,6 +69,11 @@ export const EventPageStyle = styled.div`
                         height: 100%;
                         width: 358px;
                         object-fit: cover;
+                        filter: grayscale(100%);
+                        cursor: pointer;
+                        &:hover {
+                            filter: grayscale(0%);
+                        }
                     }
                 }
 
@@ -80,114 +86,51 @@ export const EventPageStyle = styled.div`
     }
 `;
 
-export const EventPageStyle2 = styled.div`
-    /* 
-    background: #f2efeb;
-    padding: 160px 0;
-    text-align: center;
-    h3 {
-        font-size: 46px;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 18px;
-    }
-    > p {
-        font-size: 16px;
-        font-weight: 500;
-        color: #616161;
-    }
-    .detaliText {
-        color: #292929;
-        display: flex;
-        font-weight: 500;
-        font-size: 18px;
-        justify-content: center;
-        padding-top: 70px;
-        p {
-            margin-right: 7px;
-        }
-
-        strong {
-            color: #c14165;
-            font-weight: 700;
-        }
-        span {
-            position: relative;
-            display: inline-block;
-            color: #292929;
-            font-weight: 700;
-            z-index: 1;
-
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: 5px;
-                left: 3px;
-                width: 130px;
-                height: 10px;
-                background: #f2c6d2;
-                z-index: -1;
-            }
-        }
-    }
-
-    .thumbList {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 10px;
-        margin-top: 75px;
-        li {
-            width: 220px;
-            height: 220px;
-            img {
-                filter: grayscale(100%);
-                transition: filter 0.3s ease;
-                cursor: pointer;
-            }
-
-            img:hover {
-                filter: grayscale(0%);
-            }
-        }
-    }
-    .event-modal-backdrop {
+export const EventModaltyle = styled.div`
+    .modal-overlay {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.8);
         display: flex;
+        align-items: center;
         justify-content: center;
-        align-EventPageData: center;
-        z-index: 1000;
-        padding: 40px;
+        z-index: 999999;
+    }
 
-        // 모달 스크롤 가능하게
-        overflow-y: auto;
+    /* 이미지 감싸는 컨테이너 */
+    .modal-image-wrap {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .event-modal-content {
-            position: relative;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 100%;
-            max-height: 100vh;
-            overflow-y: auto; // 콘텐츠 스크롤 허용
+    /* 이미지 자체를 꽉 차게 */
+    .modal-image-wrap img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+        object-fit: contain;
+    }
 
-            img {
-                width: 100%;
-                height: auto;
-            }
-
-            .close-btn {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                font-size: 24px;
-                background: none;
-                border: none;
-                color: #000;
-                cursor: pointer;
-            }
-        }
-    } */
+    /* 닫기 버튼 */
+    .modal-close {
+        position: absolute;
+        top: -40px; /* 이미지 위쪽 */
+        right: -10px;
+        font-size: 40px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        line-height: 1;
+        transition: transform 0.2s;
+    }
+    .modal-close:hover {
+        transform: scale(1.1);
+    }
 `;

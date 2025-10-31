@@ -220,7 +220,7 @@ const WorkGallery = () => {
                                     </div>
                                 </li>
                                 <li className="right">
-                                    <p
+                                    <div
                                         onClick={() => {
                                             if (item.vercelUrl) {
                                                 window.open(item.vercelUrl, 'full');
@@ -239,7 +239,7 @@ const WorkGallery = () => {
                                                 style={{ fontSize: '35px', marginLeft: '20px' }}
                                             />
                                         </p>
-                                    </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

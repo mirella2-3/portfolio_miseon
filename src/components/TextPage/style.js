@@ -4,8 +4,10 @@ export const TextPageStyle = styled.div`
     text-align: center;
     width: 100vw;
     /* height: 700px; */
-    height: 100vh;
+    height: 90vh;
+
     padding-top: 160px;
+    box-sizing: border-box;
     position: relative;
     &.page2 {
         background: #f2efeb;

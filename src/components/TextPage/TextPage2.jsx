@@ -11,16 +11,17 @@ const TextPage2 = () => {
     const h1Ref = useRef(null);
     const h3Ref = useRef(null);
     const spanRef = useRef(null);
+
     useEffect(() => {
         const ctx = gsap.context(() => {
             ScrollTrigger.matchMedia({
-                // === 데스크톱 (1024px 이상) ===
                 '(min-width: 1024px)': function () {
+                    // ========== 나타나는 애니메이션 ==========
                     const tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: 'top 55%',
-                            end: '+=450',
+                            start: 'top 30%', // 화면 절반 보일때
+                            end: 'top 50%',
                             scrub: true,
                         },
                     });
@@ -28,37 +29,102 @@ const TextPage2 = () => {
                     tl.to(gradientRef.current, {
                         scale: 1,
                         opacity: 1,
-                        duration: 1,
+                        duration: 1.2,
                         ease: 'power2.out',
                     });
 
                     tl.fromTo(
                         h1Ref.current,
                         { opacity: 0, y: 30 },
-                        { opacity: 1, y: 0, duration: 1 },
+                        { opacity: 1, y: 0, duration: 1.2 },
                         '+=0.2'
                     );
 
                     tl.fromTo(
                         h3Ref.current,
                         { opacity: 0, y: 30 },
-                        { opacity: 1, y: 0, duration: 1 },
+                        { opacity: 1, y: 0, duration: 1.2 },
                         '+=0.2'
                     );
 
                     tl.fromTo(
                         spanRef.current,
                         { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.4 },
+                        { opacity: 1, y: 0, duration: 1 },
                         '+=0.2'
                     );
 
+                    // ========== 사라지는 애니메이션 ==========
+                    gsap.to(h1Ref.current, {
+                        x: -300,
+                        opacity: 0,
+                        duration: 1.5,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top -30%',
+                            end: 'top -45%',
+                            scrub: true,
+                        },
+                    });
+
+                    gsap.to(h3Ref.current, {
+                        x: 300,
+                        opacity: 0,
+                        duration: 1.5,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top -45%',
+                            end: 'top -60%',
+                            scrub: true,
+                        },
+                    });
+
+                    gsap.to(spanRef.current, {
+                        opacity: 0,
+                        filter: 'blur(8px)',
+                        duration: 1.5,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top -60%',
+                            end: 'top -75%',
+                            scrub: true,
+                        },
+                    });
+                },
+
+                '(max-width: 1023px)': function () {
+                    // 모바일용 간단 버전
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 60%',
+                            end: '+=400',
+                            scrub: true,
+                        },
+                    });
+
+                    tl.to(gradientRef.current, {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1.2,
+                        ease: 'power2.out',
+                    });
+
+                    tl.fromTo(
+                        [h1Ref.current, h3Ref.current, spanRef.current],
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 1, stagger: 0.3 }
+                    );
+
+                    // 사라지는 애니메이션
+                    // 사라지는 애니메이션 (timeline 사용)
                     const tlDisappear = gsap.timeline({
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: 'top -22%',
-                            end: 'top -45%',
+                            start: 'top -30%',
+                            end: 'top -75%',
                             scrub: true,
+                            markers: true,
                         },
                     });
 
@@ -66,43 +132,19 @@ const TextPage2 = () => {
                         x: -300,
                         opacity: 0,
                         ease: 'power1.out',
-                        duration: 1,
+                        duration: 1.5,
                     });
 
                     tlDisappear.to(
                         h3Ref.current,
-                        { x: 300, opacity: 0, ease: 'power1.out', duration: 1 },
-                        '>-0.2'
+                        { x: 300, opacity: 0, ease: 'power1.out', duration: 1.5 },
+                        '-=1.0'
                     );
 
                     tlDisappear.to(
                         spanRef.current,
-                        { opacity: 0, filter: 'blur(8px)', ease: 'power1.out', duration: 1 },
-                        '>-0.2'
-                    );
-                },
-
-                '(max-width: 1023px)': function () {
-                    const tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: 'top 60%',
-                            end: '+=450',
-                            scrub: true,
-                        },
-                    });
-
-                    tl.to(gradientRef.current, {
-                        scale: 1,
-                        opacity: 1,
-                        duration: 1,
-                        ease: 'power2.out',
-                    });
-
-                    tl.fromTo(
-                        [h1Ref.current, h3Ref.current, spanRef.current],
-                        { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }
+                        { opacity: 0, filter: 'blur(8px)', ease: 'power1.out', duration: 1.5 },
+                        '-=1.0'
                     );
                 },
             });

@@ -372,6 +372,7 @@ export const FirstPage = styled.div`
             animation-delay: 2.1s; /* 네 번째 항목은 2.1초 뒤 */
         }
     }
+
     @media screen and (max-width: 1023px) {
         background-color: #362718;
         background-image: none;
@@ -394,4 +395,14 @@ export const FirstPage = styled.div`
             font-size: 70px;
         }
     }
+`;
+
+export const Overlay = styled.div`
+    position: fixed;
+    inset: 0;
+    background: #ff4e00; /* 전환 색상 (자유 변경 가능) */
+    clip-path: polygon(49.75% 0%, 50.25% 0%, 50.25% 100%, 49.75% 100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
 `;
