@@ -15,7 +15,7 @@ const SkillSlide = () => {
         const checkImagesLoaded = () => {
             loadedCount++;
             if (loadedCount === originalCount) {
-                initSlider();
+                initSlider(); // 이제 안전하게 호출 가능
             }
         };
 
@@ -29,7 +29,8 @@ const SkillSlide = () => {
             }
         });
 
-        const initSlider = () => {
+        // ⚡ 여기만 바꿈
+        function initSlider() {
             const itemWidth = items[0].offsetWidth;
 
             // 기존 클론 제거
@@ -74,7 +75,7 @@ const SkillSlide = () => {
                 slider.removeEventListener('mouseenter', handleEnter);
                 slider.removeEventListener('mouseleave', handleLeave);
             };
-        };
+        }
 
         // 클린업
         return () => {

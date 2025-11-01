@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const colorBg = '#222a30';
+const colorBg = '#362718';
 const colorOutline = '#ffffff';
-const colorOutlineFade = '#4e5559';
+const colorOutlineFade = '#81614E';
 
-const widthMouse = 52;
-const heightMouse = 88;
+const widthMouse = 40;
+const heightMouse = 60;
 const borderMouse = 6;
 
 const posMouse = 8;
@@ -122,10 +122,8 @@ const Mouse = styled.div`
 
 // 📜 SCROLL 텍스트
 const ScrollText = styled.p`
-    margin-top: 50px;
-    font-family: 'Cabin', sans-serif;
-    letter-spacing: 12px;
-    text-indent: 12px;
+    margin-top: 7px;
+    font-family: 'EB Garamond';
     color: ${colorOutline};
     animation: ${colorText} ${animDuration} ease-out infinite,
         ${nudgeText} ${animDuration} ease-out infinite;
@@ -136,8 +134,9 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: end;
+    height: 200px;
+
     background-color: ${colorBg};
 `;
 

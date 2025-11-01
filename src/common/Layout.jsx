@@ -1,17 +1,21 @@
-import { Outlet } from 'react-router-dom';
-import Header from './header';
 import { useState } from 'react';
-// import Footer from './Footer';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = () => {
-    const [hideHeader, setHideHeader] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
+    const [currentSection, setCurrentSection] = useState(''); // 현재 섹션 상태
+
     return (
         <div className="wrap">
-            {!hideHeader && <Header />}
+            {showHeader && <Header currentSection={currentSection} />}
+
             <main className="main">
-                <Outlet context={{ setHideHeader }} />
+                <Outlet context={{ setShowHeader, setCurrentSection }} />
             </main>
-            {/* <Footer /> */}
+
+            <Footer />
         </div>
     );
 };

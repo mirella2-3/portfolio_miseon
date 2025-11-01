@@ -49,6 +49,9 @@ export const NavStyle = styled.nav`
             aspect-ratio: 22/21;
             opacity: 0;
             transition: all 0.3s;
+            &.active {
+                opacity: 1; /* 현재 섹션일 때 항상 보이게 */
+            }
         }
 
         &:hover {
