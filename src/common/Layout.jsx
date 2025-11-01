@@ -5,7 +5,7 @@ import Header from './Header';
 
 const Layout = () => {
     const [showHeader, setShowHeader] = useState(true);
-    const [currentSection, setCurrentSection] = useState(''); // 현재 섹션 상태
+    const [currentSection, setCurrentSection] = useState('');
 
     return (
         <div className="wrap">
