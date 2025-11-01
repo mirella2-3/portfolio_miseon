@@ -9,7 +9,7 @@ const PopupPage = () => {
                 <h3>
                     <strong>
                         <PiCoffeeBeanFill
-                            size={32}
+                            size={40}
                             color="#998A7C"
                             style={{
                                 marginRight: '17px',

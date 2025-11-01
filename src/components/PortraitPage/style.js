@@ -45,6 +45,9 @@ export const PortraitPageStyle = styled.div`
                     overflow: hidden;
                     box-sizing: border-box;
                     cursor: pointer;
+                    &.swiper-slide-active img {
+                        filter: grayscale(0%);
+                    }
                 }
 
                 .swiper-slide-active img,
@@ -59,10 +62,12 @@ export const PortraitPageStyle = styled.div`
                     pointer-events: none;
                     display: block;
                     transition: transform 0.3s ease;
+                    filter: grayscale(1) brightness(0.5) sepia(40%);
                 }
 
                 .swiper-slide:hover img {
                     transform: scale(1.05);
+                    filter: grayscale(0) brightness(1);
                 }
             }
         }

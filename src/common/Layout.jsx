@@ -1,13 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import Header from './header';
+import { useState } from 'react';
 // import Footer from './Footer';
 
 const Layout = () => {
+    const [hideHeader, setHideHeader] = useState(false);
     return (
         <div className="wrap">
-            <Header />
+            {!hideHeader && <Header />}
             <main className="main">
-                <Outlet />
+                <Outlet context={{ setHideHeader }} />
             </main>
             {/* <Footer /> */}
         </div>

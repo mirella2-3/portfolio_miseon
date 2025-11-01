@@ -1,16 +1,6 @@
 const PortfolioData = [
     {
         id: 1,
-        title: '호강스',
-        desc: '반려견을 위한 휴식과 즐거움을 한 곳에 담은 호텔·미용·OTT 통합 플랫폼, 호강스를 디자인했습니다. 귀엽고 아기자기한 콘셉트로 호강 라이프를 시각적으로 표현했습니다.',
-        vercelUrl: 'https://hogangs.vercel.app/',
-        figmaUrl:
-            'https://www.figma.com/proto/cjcG1X7dssRLs3ouiwBRUN/%F0%9F%90%B6-%ED%98%B8%EA%B0%95%EC%8A%A4-%EA%B8%B0%ED%9A%8D%EC%84%9C?node-id=2758-1768&t=CUZg2YQXgD8wN628-1&scaling=min-zoom&content-scaling=fixed&page-id=2001%3A2',
-        imgUrl: '/images/Projects-image/ProjectsImage01.png',
-        tool: ['6인 프로젝트', 'Main Designer'],
-    },
-    {
-        id: 2,
         title: '라운드 랩',
         desc: '기존 사이트의 단조로움을 개선하고 한눈에 들어오는 시원한 비주얼로 구성했습니다. 청량한 컬러와 새로운 모델 이미지를 통해 브랜드의 활기와 신뢰감을 함께 표현했습니다.',
         vercelUrl: 'https://project-round-lab.vercel.app/',
@@ -18,6 +8,16 @@ const PortfolioData = [
             'https://www.figma.com/proto/PQFpii8HOf0GZlvdox4H9i/PPT%F0%9F%A7%A1%EA%B8%B0%EC%97%AD%EC%A1%B0?node-id=1031-4453&t=dFGU5lE96TNivWCK-1&scaling=min-zoom&content-scaling=fixed&page-id=388%3A5533',
         imgUrl: '/images/Projects-image/ProjectsImage02.png',
         tool: ['4인 프로젝트', 'Main Designer'],
+    },
+    {
+        id: 2,
+        title: '호강스',
+        desc: '반려견을 위한 휴식과 즐거움을 한 곳에 담은 호텔·미용·OTT 통합 플랫폼, 호강스를 디자인했습니다. 귀엽고 아기자기한 콘셉트로 호강 라이프를 시각적으로 표현했습니다.',
+        vercelUrl: 'https://hogangs.vercel.app/',
+        figmaUrl:
+            'https://www.figma.com/proto/cjcG1X7dssRLs3ouiwBRUN/%F0%9F%90%B6-%ED%98%B8%EA%B0%95%EC%8A%A4-%EA%B8%B0%ED%9A%8D%EC%84%9C?node-id=2758-1768&t=CUZg2YQXgD8wN628-1&scaling=min-zoom&content-scaling=fixed&page-id=2001%3A2',
+        imgUrl: '/images/Projects-image/ProjectsImage01.png',
+        tool: ['6인 프로젝트', 'Main Designer'],
     },
     {
         id: 3,

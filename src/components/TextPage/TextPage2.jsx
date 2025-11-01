@@ -54,7 +54,6 @@ const TextPage2 = () => {
                         '+=0.2'
                     );
 
-                    // ========== 사라지는 애니메이션 ==========
                     gsap.to(h1Ref.current, {
                         x: -300,
                         opacity: 0,

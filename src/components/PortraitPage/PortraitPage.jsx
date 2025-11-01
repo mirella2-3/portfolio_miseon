@@ -20,7 +20,7 @@ const PortraitPage = () => {
                 <div className="text-area2">
                     <h3>
                         <PiCoffeeBeanFill
-                            size={32}
+                            size={40}
                             color="#998A7C"
                             style={{ marginRight: '17px' }}
                         />
@@ -57,9 +57,7 @@ const PortraitPage = () => {
                 </div>
             </div>
 
-            {/* 메인 이미지 */}
             <div className="main-bg">
-                {/* 흐린 배경 */}
                 <div
                     className="background-image"
                     style={{
@@ -67,7 +65,6 @@ const PortraitPage = () => {
                     }}
                 />
 
-                {/* 메인 이미지 */}
                 <div
                     className="main-image"
                     onMouseEnter={() => setIsHovered(true)}

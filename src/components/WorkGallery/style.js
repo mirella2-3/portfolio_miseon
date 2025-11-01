@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WorkGalleryStyle = styled.div`
-    height: 650px;
+    height: 700px;
     position: relative;
     z-index: 100;
 
@@ -15,7 +15,7 @@ export const WorkGalleryStyle = styled.div`
     }
     .bgText {
         position: absolute;
-        bottom: 30px;
+        bottom: 100px;
         line-height: 1;
         z-index: -1;
 
@@ -65,9 +65,6 @@ export const WorkGalleryStyle = styled.div`
 
                 transition: background-color 0.2s ease;
 
-                &:hover {
-                    /* filter: brightness(1.5); */
-                }
                 span {
                     height: 56px;
                     color: var(--Brown-brown-200, #b1aaa4);
@@ -110,19 +107,19 @@ export const WorkGalleryStyle = styled.div`
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
-                        margin-bottom: 0;
+                        margin-bottom: 16px;
                     }
                     div {
                         display: flex;
-                        gap: 10px;
+                        gap: 6px;
                         > button {
                             background: #cfc0acff;
                             color: #fff;
                             font-weight: 300;
                             border: none;
                             font-size: 12px;
-                            border-radius: 0;
-                            padding: 5px 10px;
+                            border-radius: 4px;
+                            padding: 6px 18px;
                             cursor: default;
 
                             &:hover {
@@ -149,6 +146,8 @@ export const WorkGalleryStyle = styled.div`
                         margin-top: 37px;
                     }
                     .link-buttons {
+                        display: flex;
+                        gap: 10px;
                         button {
                             color: var(--Brown-brown-500, #564438);
                             text-align: center;

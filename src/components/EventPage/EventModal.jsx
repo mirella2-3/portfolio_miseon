@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
+import { EventModaltyle } from './style';
 
 const EventModal = ({ image, onClose }) => {
     const modalRef = useRef(null);
 
-    // ESC 키로 닫기
     useEffect(() => {
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
@@ -13,7 +13,6 @@ const EventModal = ({ image, onClose }) => {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [onClose]);
 
-    // GSAP 등장 애니메이션
     useEffect(() => {
         if (modalRef.current) {
             gsap.fromTo(
@@ -24,17 +23,26 @@ const EventModal = ({ image, onClose }) => {
         }
     }, [image]);
 
-    // if (!image) return null;
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        };
+    }, []);
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
+        <EventModaltyle className="modal-overlay" onClick={onClose}>
             <div className="modal-image-wrap" ref={modalRef} onClick={(e) => e.stopPropagation()}>
                 <button className="modal-close" onClick={onClose}>
                     &times;
                 </button>
-                <img src={image} alt="event-original" />
+                <div className="modal-content">
+                    <img src={image} alt="event-original" />
+                </div>
             </div>
-        </div>
+        </EventModaltyle>
     );
 };
 

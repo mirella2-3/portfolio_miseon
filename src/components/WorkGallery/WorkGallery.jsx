@@ -198,7 +198,7 @@ const WorkGallery = () => {
                                             <button
                                                 onClick={() => window.open(item.figmaUrl, '_blank')}
                                             >
-                                                uiux기획서
+                                                UIUX기획서
                                             </button>
                                         )}
                                         {item.SDDUrl && (
