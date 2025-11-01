@@ -20,8 +20,8 @@ const TextPage2 = () => {
                     const tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: 'top 30%', // 화면 절반 보일때
-                            end: 'top 50%',
+                            start: 'top 30%',
+                            end: 'top -10%',
                             scrub: true,
                         },
                     });
@@ -29,66 +29,58 @@ const TextPage2 = () => {
                     tl.to(gradientRef.current, {
                         scale: 1,
                         opacity: 1,
-                        duration: 1.2,
+                        duration: 1,
                         ease: 'power2.out',
                     });
 
                     tl.fromTo(
                         h1Ref.current,
                         { opacity: 0, y: 30 },
-                        { opacity: 1, y: 0, duration: 1.2 },
-                        '+=0.2'
+                        { opacity: 1, y: 0, duration: 1 },
+                        '+=0.5'
                     );
 
                     tl.fromTo(
                         h3Ref.current,
                         { opacity: 0, y: 30 },
-                        { opacity: 1, y: 0, duration: 1.2 },
-                        '+=0.2'
+                        { opacity: 1, y: 0, duration: 1 },
+                        '+=0.5'
                     );
 
                     tl.fromTo(
                         spanRef.current,
                         { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 1 },
-                        '+=0.2'
+                        { opacity: 1, y: 0, duration: 0.4 },
+                        '+=0.5'
                     );
 
-                    gsap.to(h1Ref.current, {
-                        x: -300,
-                        opacity: 0,
-                        duration: 1.5,
+                    const tlDisappear = gsap.timeline({
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: 'top -30%',
+                            start: 'top -22%',
                             end: 'top -45%',
                             scrub: true,
                         },
                     });
 
-                    gsap.to(h3Ref.current, {
-                        x: 300,
+                    tlDisappear.to(h1Ref.current, {
+                        x: -100,
                         opacity: 0,
-                        duration: 1.5,
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: 'top -45%',
-                            end: 'top -60%',
-                            scrub: true,
-                        },
+                        ease: 'power1.out',
+                        duration: 0.3,
                     });
 
-                    gsap.to(spanRef.current, {
-                        opacity: 0,
-                        filter: 'blur(8px)',
-                        duration: 1.5,
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: 'top -60%',
-                            end: 'top -75%',
-                            scrub: true,
-                        },
-                    });
+                    tlDisappear.to(
+                        h3Ref.current,
+                        { x: 100, opacity: 0, ease: 'power1.out', duration: 0.3 },
+                        '>-0.2'
+                    );
+
+                    tlDisappear.to(
+                        spanRef.current,
+                        { opacity: 0, filter: 'blur(8px)', ease: 'power1.out', duration: 0.3 },
+                        '>-0.2'
+                    );
                 },
 
                 '(max-width: 1023px)': function () {
