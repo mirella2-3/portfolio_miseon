@@ -119,63 +119,98 @@ export const EventPageStyle = styled.div`
     }
 `;
 
-export const EventModaltyle = styled.div`
+// export const EventModalStyle = styled.div`
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.8);
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     padding: 40px 20px;
+//     z-index: 9999;
+//     .modal-image-wrap {
+//         position: relative;
+//         width: auto;
+//         max-height: 90vh;
+//         background: #000;
+//         overflow: hidden;
+
+//         display: flex;
+//         flex-direction: column;
+//     }
+
+//     .modal-content {
+//         flex: 1;
+//         overflow-y: auto;
+//         display: flex;
+//         justify-content: center;
+//         align-items: flex-start;
+//         -ms-overflow-style: none;
+//         scrollbar-width: none;
+
+//         &::-webkit-scrollbar {
+//             width: 0;
+//             height: 0;
+//         }
+
+//         img {
+//             max-width: 100%;
+//             max-height: 100%;
+//             object-fit: contain;
+//             display: block;
+//         }
+//     }
+// `;
+
+export const EventModalStyle = styled.div`
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* ✅ 검정 배경 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* 검정 오버레이 */
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 9999; /* ✅ 화면 최상단 */
+    align-items: flex-start; /* 상단 정렬 */
+    padding: 40px 20px;
+    z-index: 20000; /* 헤더보다 충분히 크게 */
 
-    /* 이미지 감싸는 컨테이너 */
     .modal-image-wrap {
         position: relative;
-        max-width: 90vw;
+        width: auto;
         max-height: 90vh;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
         flex-direction: column;
+        background: #000;
+        overflow: hidden;
     }
 
-    .modal-image-wrap img {
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 8px;
-        object-fit: contain;
-    }
-
-    .modal-close {
-        position: absolute;
-        top: -40px;
-        right: -10px;
-        font-size: 40px;
-        background: none;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        line-height: 1;
-        transition: transform 0.2s;
-    }
-    .modal-close:hover {
-        transform: scale(1.1);
-    }
     .modal-content {
         overflow-y: auto;
-        max-height: 85vh;
-        padding: 10px;
+        max-height: 100%;
+
+        /* 스크롤바 숨기기 */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start; /* 이미지 맨 위에서부터 시작 */
 
         img {
-            max-width: 100%;
+            width: auto;
             height: auto;
+            max-width: 100%;
+            max-height: 100%;
             display: block;
+            object-fit: cover;
         }
     }
 `;

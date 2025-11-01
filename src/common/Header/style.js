@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
     background: transparent;
-
     position: fixed;
     top: 38px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
+
     @media screen and (max-width: 1023px) {
     }
     @media screen and (max-width: 600px) {

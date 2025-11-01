@@ -28,6 +28,7 @@ export const ProfilePageStyle = styled.div`
                 font-size: 52px;
                 text-align: center;
                 font-weight: 600;
+                letter-spacing: 1px;
             }
         }
         @keyframes typing {
@@ -49,7 +50,7 @@ export const ProfilePageStyle = styled.div`
 
             .circle {
                 position: absolute;
-                bottom: -20px;
+                bottom: -15px;
                 right: 70px;
             }
 

@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
-import { EventModaltyle } from './style';
+import { EventModalStyle } from './style';
 
 const EventModal = ({ image, onClose }) => {
     const modalRef = useRef(null);
+    const contentRef = useRef(null);
 
+    // ESC 키로 모달 닫기
     useEffect(() => {
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
@@ -13,6 +16,7 @@ const EventModal = ({ image, onClose }) => {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [onClose]);
 
+    // 모달 등장 애니메이션
     useEffect(() => {
         if (modalRef.current) {
             gsap.fromTo(
@@ -23,26 +27,44 @@ const EventModal = ({ image, onClose }) => {
         }
     }, [image]);
 
+    // 바깥 스크롤 막기
     useEffect(() => {
+        const originalStyle = window.getComputedStyle(document.body).overflow;
         document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
         return () => {
-            document.body.style.overflow = 'auto';
-            document.documentElement.style.overflow = 'auto';
+            document.body.style.overflow = originalStyle;
         };
     }, []);
 
-    return (
-        <EventModaltyle className="modal-overlay" onClick={onClose}>
+    // Portal로 body 직속 렌더링
+    return createPortal(
+        <EventModalStyle className="modal-overlay" onClick={onClose}>
             <div className="modal-image-wrap" ref={modalRef} onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={onClose}>
-                    &times;
-                </button>
-                <div className="modal-content">
+                <div
+                    className="modal-content"
+                    ref={contentRef}
+                    onWheel={(e) => {
+                        e.stopPropagation();
+                        const el = contentRef.current;
+                        if (!el) return;
+
+                        const delta = e.deltaY;
+                        const atTop = el.scrollTop === 0;
+                        const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+                        if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
+                            e.preventDefault(); // 바깥 스크롤 막기
+                        } else {
+                            el.scrollTop += delta; // 모달 안 스크롤
+                            e.preventDefault();
+                        }
+                    }}
+                >
                     <img src={image} alt="event-original" />
                 </div>
             </div>
-        </EventModaltyle>
+        </EventModalStyle>,
+        document.body
     );
 };
 

@@ -5,7 +5,7 @@ export const TextPageStyle = styled.div`
     width: 100vw;
     /* height: 700px; */
     height: 90vh;
-
+    background: #f8f8f8;
     padding-top: 160px;
     box-sizing: border-box;
     position: relative;
