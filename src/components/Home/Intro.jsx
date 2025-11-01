@@ -229,10 +229,18 @@ const Intro = () => {
             </section>
 
             <section className="con2">
-                <h1>
-                    <PiCoffeeBeanFill size={24} color="#998A7C" style={{ marginRight: '17px' }} />
-                    Where the aroma of my coffee first begins to unfold.
-                </h1>
+                <div className="text-wrapper">
+                    <h1>
+                        <PiCoffeeBeanFill
+                            size={50}
+                            color="#998A7C"
+                            style={{ marginRight: '17px' }}
+                            className="icon"
+                        />
+                        Wake Up with Design
+                    </h1>
+                    <p>디자인으로 시작하는 하루</p>
+                </div>
             </section>
 
             <section className="con3"></section>

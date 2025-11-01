@@ -95,22 +95,42 @@ export const IntroStyle = styled.div`
         }
     }
 
-    .con2,
-    .con4 {
+    .con2 {
+        position: static;
+        font-family: 'EB Garamond';
+        font-size: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #24190f;
+        background-color: #17100a;
         color: #f9f4eb;
-    }
-    .con2 {
-        font-family: 'EB Garamond';
-        font-size: 30px;
+
+        h1 {
+            display: block;
+            position: relative;
+            .icon {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -60%;
+                mix-blend-mode: screen;
+                opacity: calc(0.2);
+            }
+        }
+        p {
+            color: var(--White, #fff);
+            text-align: center;
+            text-shadow: 0 4px 14px rgba(52, 52, 52, 0.05);
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+            display: block;
+        }
     }
 
     .con3 {
-        /* padding: 8rem 2rem; */
-
         .con3-header {
             position: relative;
             width: 100%;
