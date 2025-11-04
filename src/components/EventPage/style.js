@@ -119,80 +119,51 @@ export const EventPageStyle = styled.div`
     }
 `;
 
-// export const EventModalStyle = styled.div`
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(0, 0, 0, 0.8);
-//     display: flex;
-//     justify-content: center;
-//     align-items: flex-start;
-//     padding: 40px 20px;
-//     z-index: 9999;
-//     .modal-image-wrap {
-//         position: relative;
-//         width: auto;
-//         max-height: 90vh;
-//         background: #000;
-//         overflow: hidden;
-
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .modal-content {
-//         flex: 1;
-//         overflow-y: auto;
-//         display: flex;
-//         justify-content: center;
-//         align-items: flex-start;
-//         -ms-overflow-style: none;
-//         scrollbar-width: none;
-
-//         &::-webkit-scrollbar {
-//             width: 0;
-//             height: 0;
-//         }
-
-//         img {
-//             max-width: 100%;
-//             max-height: 100%;
-//             object-fit: contain;
-//             display: block;
-//         }
-//     }
-// `;
-
 export const EventModalStyle = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* 검정 오버레이 */
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 상단 정렬 */
-    padding: 40px 20px;
-    z-index: 20000; /* 헤더보다 충분히 크게 */
+    align-items: flex-start;
+    /* padding: 40px 20px; */
+    z-index: 20000;
+
+    .close-btn {
+        position: absolute;
+        top: 30px;
+        right: -30px;
+        z-index: 10000; /* 이미지보다 위로 */
+        background: transparent;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        line-height: 32px;
+        cursor: pointer;
+    }
 
     .modal-image-wrap {
         position: relative;
         width: auto;
-        max-height: 90vh;
+        max-height: 100vh;
         display: flex;
         flex-direction: column;
-        background: #000;
-        overflow: hidden;
+        background: transparent;
+        /* overflow: hidden; */
+        overflow: visible;
     }
 
     .modal-content {
         overflow-y: auto;
         max-height: 100%;
+        padding: 35px 0;
 
-        /* 스크롤바 숨기기 */
         -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -202,7 +173,7 @@ export const EventModalStyle = styled.div`
 
         display: flex;
         justify-content: center;
-        align-items: flex-start; /* 이미지 맨 위에서부터 시작 */
+        align-items: flex-start;
 
         img {
             width: auto;

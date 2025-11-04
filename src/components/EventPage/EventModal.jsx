@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { gsap } from 'gsap';
 import { EventModalStyle } from './style';
+import { IoMdClose } from 'react-icons/io';
 
 const EventModal = ({ image, onClose }) => {
     const modalRef = useRef(null);
@@ -40,6 +41,9 @@ const EventModal = ({ image, onClose }) => {
     return createPortal(
         <EventModalStyle className="modal-overlay" onClick={onClose}>
             <div className="modal-image-wrap" ref={modalRef} onClick={(e) => e.stopPropagation()}>
+                <button className="close-btn" onClick={onClose} aria-label="close modal">
+                    <IoMdClose size={40} />
+                </button>
                 <div
                     className="modal-content"
                     ref={contentRef}
@@ -53,9 +57,9 @@ const EventModal = ({ image, onClose }) => {
                         const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
 
                         if ((delta < 0 && atTop) || (delta > 0 && atBottom)) {
-                            e.preventDefault(); // 바깥 스크롤 막기
+                            e.preventDefault();
                         } else {
-                            el.scrollTop += delta; // 모달 안 스크롤
+                            el.scrollTop += delta;
                             e.preventDefault();
                         }
                     }}
