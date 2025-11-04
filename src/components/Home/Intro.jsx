@@ -247,7 +247,7 @@ const Intro = () => {
 
             <section className="cards">
                 <div className="cards-container">
-                    {['Profile ', 'Projects', 'About Me'].map((title, idx) => (
+                    {['Profile ', 'Works', 'Projects'].map((title, idx) => (
                         <div className="card" id={`card-${idx + 1}`} key={idx}>
                             <div className="card-wrapper">
                                 <div className="flip-card-inner">

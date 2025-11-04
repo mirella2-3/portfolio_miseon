@@ -11,8 +11,8 @@ const scrollToSection = (sectionId) => {
 const Navbar = ({ currentSection }) => {
     const buttons = [
         { id: 'Profile', label: 'Profile' },
-        { id: 'Projects', label: 'Projects' },
         { id: 'Works', label: 'Works' },
+        { id: 'Projects', label: 'Projects' },
     ];
 
     return (
