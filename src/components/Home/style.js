@@ -4,7 +4,7 @@ export const IntroStyle = styled.div`
     box-sizing: border-box;
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 46px;
         font-weight: 500;
     }
 

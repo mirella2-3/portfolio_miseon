@@ -13,10 +13,10 @@ const Intro0 = () => {
     return (
         <FirstPage>
             <ul className="text">
-                <li>A Cup of Code</li>
-                <li>A Cup of Code</li>
-                <li>A Cup of Code</li>
-                <li>A Cup of Code</li>
+                <li>A Cup of Design</li>
+                <li>A Cup of Design</li>
+                <li>A Cup of Design</li>
+                <li>A Cup of Design</li>
             </ul>
             <div className="coffee">
                 <img src="/images/Intro-image/coffee.png" alt="Coffee" />
