@@ -18,7 +18,10 @@ const PopupPage = () => {
                         Modal
                     </strong>
                 </h3>
-                <span>홈페이지와 SNS 홍보에 적용된 가독성을 살린 모달 디자인입니다.</span>
+                <span>
+                    홈페이지와 SNS 홍보에 적용된 가독성을 살린 모달 디자인입니다.
+                    <span style={{ color: '#959595' }}>(디자인 기여도 100%)</span>
+                </span>
             </div>
             <PopupSlide />
         </PopupPageStyle>

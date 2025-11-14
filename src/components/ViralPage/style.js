@@ -12,6 +12,11 @@ export const ViralPageStyle = styled.div`
         font-weight: 700;
         color: #f2efeb;
     }
+    > p {
+        position: absolute;
+        right: 0;
+        top: 242px;
+    }
 
     #Longbox {
         margin-bottom: 15px;
