@@ -24,12 +24,24 @@ export const SkillPageStyle = styled.div`
         &.edu {
             margin-bottom: 83px;
         }
+        .sub2 {
+            p {
+                display: inline-block;
+                font-weight: 600;
+                width: 82px;
+            }
+            .edus {
+                span {
+                    padding-left: 87px;
+                }
+            }
+        }
     }
     .title {
         color: #81614e;
         font-size: 20px;
         font-weight: 600;
-        width: 110px;
+        width: 120px;
         margin-right: 16px;
         line-height: 1;
     }

@@ -8,12 +8,43 @@ const SkillPage = () => {
             <div className="inner">
                 <section className="leftSide">
                     <ul className="sub1 edu">
-                        <li className="title">Education</li>
-                        <li>
-                            경상국립대학교 텍스타일 디자인과 졸업 <span>2012.02 - 2016.02</span>
-                        </li>
+                        <li className="title">Persona Info</li>
+                        <ul className="sub2">
+                            <li className="edus">
+                                <p>Education</p> 경상국립대학교 텍스타일 디자인과 졸업
+                                <span>2012.02 - 2016.02</span>
+                            </li>
+                            <li>
+                                <p>mobile</p>010 . 2278 . 1384
+                            </li>
+                            <li>
+                                <p>e-mail</p>m1384@naver.com
+                            </li>
+                        </ul>
                     </ul>
                     <ul className="sub1 ">
+                        <li className="title">Certificate</li>
+                        <ul className="sub2">
+                            <li>
+                                컴퓨터그래픽스운용기능사 <span>2015.10</span>
+                            </li>
+                            <li>
+                                GTQ포토샵 1급<span>2015.04</span>
+                            </li>
+                            <li>
+                                AutoCAD 2급<span>2016.04</span>
+                            </li>
+                            <li>
+                                운전면허 1종 보통 <span>2017.10</span>
+                            </li>
+                            <li>
+                                JLPT N3 <span>2018.09</span>
+                            </li>
+                        </ul>
+                    </ul>
+                </section>
+                <section className="rightSide">
+                    <ul className="sub1">
                         <li className="title">Experience</li>
                         <ul className="sub2">
                             <li>
@@ -34,28 +65,6 @@ const SkillPage = () => {
                             </li>
                             <li>
                                 영원한미소 미술학원 - 학생 관리&지도 <span>2012.12 - 2014.10</span>
-                            </li>
-                        </ul>
-                    </ul>
-                </section>
-                <section className="rightSide">
-                    <ul className="sub1">
-                        <li className="title">Certificate</li>
-                        <ul className="sub2">
-                            <li>
-                                컴퓨터그래픽스운용기능사 <span>2015.10</span>
-                            </li>
-                            <li>
-                                GTQ포토샵 1급<span>2015.04</span>
-                            </li>
-                            <li>
-                                AutoCAD 2급<span>2016.04</span>
-                            </li>
-                            <li>
-                                운전면허 1종 보통 <span>2017.10</span>
-                            </li>
-                            <li>
-                                JLPT N3 <span>2018.09</span>
                             </li>
                         </ul>
                     </ul>
