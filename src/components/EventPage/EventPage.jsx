@@ -52,7 +52,9 @@ const EventPage = () => {
                         Event details page
                         <p>
                             이벤트 정보를 직관적으로 전달하기 위해 설계한 상세 페이지입니다.
-                            <span style={{ color: '#959595' }}>(디자인 기여도 100%)</span>
+                            <span style={{ color: '#959595', marginLeft: 5 }}>
+                                (디자인 기여도 100%)
+                            </span>
                         </p>
                     </h3>
                     <span>

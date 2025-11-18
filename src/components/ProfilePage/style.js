@@ -7,6 +7,7 @@ export const ProfilePageStyle = styled.div`
     padding: 160px 0;
 
     .profilePhoto {
+        margin-left: 100px;
         p {
             position: absolute;
             top: 300px;

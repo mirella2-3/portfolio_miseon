@@ -59,15 +59,14 @@ const Home = () => {
             <section id="Profile">
                 <ProfilePage /> <SkillPage />
             </section>
-
+            <section id="Projects">
+                <TextPage /> <WorkGallery />
+            </section>{' '}
             <section id="Works">
                 <TextPage2 /> <EventPage />
                 <PopupPage />
                 <ViralPage />
                 <PortraitPage />
-            </section>
-            <section id="Projects">
-                <TextPage /> <WorkGallery />
             </section>
             <People />
         </HomeStyle>
